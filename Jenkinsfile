@@ -1,8 +1,6 @@
 pipeline {
   agent any
-    
-
-    
+  
   stages {
      
     stage('Build') {
@@ -10,11 +8,11 @@ pipeline {
         sh 'npm install'
       }
    }  
- //   stage('Lint') {
+//   stage('Lint') {
 //      steps {
- //       sh 'npm run lint'
- //    } 
- //   }
+//       sh 'npm run lint'
+//    } 
+//   }
             
     stage('Test') {
       steps {
@@ -22,3 +20,4 @@ pipeline {
      }
     }
   }
+}
