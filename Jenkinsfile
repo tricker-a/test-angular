@@ -9,11 +9,11 @@ pipeline {
       steps {
         sh 'npm install'
       }
-    }  
-    stage('Lint') {
+   }  
+/*    stage('Lint') {
       steps {
         sh 'npm run lint'
-     }
+     } */
     }
             
     stage('Test') {
