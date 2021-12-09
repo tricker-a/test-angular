@@ -1,5 +1,6 @@
 pipeline {
-   agent any  
+//   agent any 
+  agent {lable 'dev_lab_2'}
 	stages {
 		stage('Install') {
 			steps {
@@ -18,11 +19,18 @@ pipeline {
 			}
 		}
    
-    		stage('Build') {
+    stage('Build') {
 			steps {
 				sh 'npm run build-prod && pwd && ls -la "dist/TestProjectJenkins/"'
 			}
 		}
+    
+    stage('copy to web path') {
+			steps {
+				sh 'ls -la "/var/www/TestProjectJenkins/" && cp "dist/TestProjectJenkins/*" "/var/www/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/" $$ service apache2 reload'
+			}
+		}
+    
 	}
   
 }
