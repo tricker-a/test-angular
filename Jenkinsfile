@@ -1,7 +1,7 @@
 pipeline {
    agent any  
 	stages {
-		stage('Build') {
+		stage('Install') {
 			steps {
 				sh 'npm install'
 			}
@@ -17,5 +17,12 @@ pipeline {
 				sh 'npm run test:ci'
 			}
 		}
+   
+    		stage('Build') {
+			steps {
+				sh 'npm run build & ls -la "dist/"'
+			}
+		}
 	}
+  
 }
