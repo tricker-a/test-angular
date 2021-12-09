@@ -21,13 +21,13 @@ pipeline {
    
     stage('Build') {
 			steps {
-				sh 'npm run build-prod && pwd && ls -la "dist/TestProjectJenkins/"'
+				sh 'npm run build-prod && pwd && ls -la "dist/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
 			}
 		}
     
     stage('copy to web path') {
 			steps {
-				sh 'ls -la "/var/www/TestProjectJenkins/" &&  cp -R dist/TestProjectJenkins/* "/var/www/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
+				sh 'cp -R dist/TestProjectJenkins/* "/var/www/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
 			}
 		}
     
