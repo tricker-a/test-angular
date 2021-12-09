@@ -20,7 +20,7 @@ pipeline {
    
     		stage('Build') {
 			steps {
-				sh 'npm run build-prod && pwd && ls -la "dist/"'
+				sh 'npm run build-prod && pwd && ls -la "dist/TestProjectJenkins/"'
 			}
 		}
 	}
