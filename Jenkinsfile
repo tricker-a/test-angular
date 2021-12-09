@@ -27,7 +27,7 @@ pipeline {
     
     stage('copy to web path') {
 			steps {
-				sh 'ls -la "/var/www/TestProjectJenkins/" && cp "dist/TestProjectJenkins/*" "/var/www/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/" $$ service apache2 reload'
+				sh 'ls -la "/var/www/TestProjectJenkins/" &&  cp -R dist/TestProjectJenkins/* "/var/www/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
 			}
 		}
     
