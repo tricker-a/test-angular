@@ -1,6 +1,6 @@
 pipeline {
 //   agent any 
-  agent {lable 'dev_lab_2'}
+  agent {label 'dev_lab_2'}
 	stages {
 		stage('Install') {
 			steps {
