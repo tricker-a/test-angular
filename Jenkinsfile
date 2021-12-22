@@ -27,16 +27,16 @@ pipeline {
 		
      }
     }
-	
-    stage('copy to web path') {
-			steps {
-				sh 'cp -R dist/TestProjectJenkins/* "/.www/"'
-			}
-		}
+//	
+//   stage('copy to web path') {
+//			steps {
+//				sh 'cp -R dist/TestProjectJenkins/* "/.www/"'
+//			}
+//		}
 		
       stage('deploy to S3'){
           steps{
-              sh 'aws s3 cp -R www/ s3://ibolit-test'
+              sh 'aws s3 cp -R dist/TestProjectJenkins/* s3://ibolit-test'
               sh 'aws s3api put-object-acl --bucket <ibolit-test> --key index.html --acl public-read'
 		  }
 		  
