@@ -36,8 +36,8 @@ pipeline {
 		
       stage('deploy to S3'){
           steps{
-              sh 'aws s3 cp -R dist/TestProjectJenkins/* s3://ibolit-test'
-              sh 'aws s3api put-object-acl --bucket <ibolit-test> --key index.html --acl public-read'
+              sh 'aws s3 cp /var/www/html/index.html s3://ibolit-test'
+//             sh 'aws s3api put-object-acl --bucket <ibolit-test> --key index.html --acl public-read'
 		  }
 		  
 	  }
