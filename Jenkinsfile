@@ -3,7 +3,7 @@ pipeline {
   
   stages {
      
-    stage('Build') {
+    stage('npm install') {
       steps {
         sh 'npm install'
       }
@@ -36,7 +36,7 @@ pipeline {
 		
       stage('deploy to S3'){
           steps{
-              sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
+              sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive'
 		  }
 		  
 	  }
