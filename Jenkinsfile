@@ -27,6 +27,7 @@ pipeline {
               sh 'aws s3 cp public/index.html s3://ibolit-test'
               sh 'aws s3api put-object-acl --bucket <ibolit-test> --key index.html --acl public-read'
 		  }
+		  
 	  }
   }
 }
