@@ -23,11 +23,17 @@ pipeline {
     }
 	  stage('build') {
       steps {
-        sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
+        sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/" "'
 		
      }
     }
-
+	
+    stage('copy to web path') {
+			steps {
+				sh 'cp -R dist/TestProjectJenkins/* "/var/www/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
+			}
+		}
+		
       stage('deploy to S3'){
           steps{
               sh 'aws s3 cp public/index.html s3://ibolit-test'
