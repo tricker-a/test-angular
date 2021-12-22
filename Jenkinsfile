@@ -21,6 +21,12 @@ pipeline {
 		
      }
     }
+	  stage('build') {
+      steps {
+        sh 'npm run build'
+		
+     }
+    }
 
       stage('deploy to S3'){
           steps{
