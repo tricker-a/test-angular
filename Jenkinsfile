@@ -30,7 +30,7 @@ pipeline {
 	
     stage('copy to web path') {
 			steps {
-				sh 'cp -R dist/TestProjectJenkins/* "/var/www/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
+				sh 'cp -R dist/TestProjectJenkins/* "/home/test/www" && ls -la "/home/test/www"'
 			}
 		}
 		
