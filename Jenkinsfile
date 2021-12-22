@@ -30,13 +30,13 @@ pipeline {
 	
     stage('copy to web path') {
 			steps {
-				sh 'cp -R dist/TestProjectJenkins/* "/home/test/www" && ls -la "/home/test/www"'
+				sh 'cp -R dist/TestProjectJenkins/* "/home/test/www/" && ls -la "/home/test/www/"'
 			}
 		}
 		
       stage('deploy to S3'){
           steps{
-              sh 'aws s3 cp public/index.html s3://ibolit-test'
+              sh 'aws s3 cp /home/test/www/index.html s3://ibolit-test'
               sh 'aws s3api put-object-acl --bucket <ibolit-test> --key index.html --acl public-read'
 		  }
 		  
