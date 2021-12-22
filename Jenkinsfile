@@ -8,12 +8,6 @@ pipeline {
         sh 'npm install'
       }
    }  
-//   stage('Lint') {
-//      steps {
-//       sh 'npm run lint'
-//    } 
-//   }
-//
 
     stage('Test') {
       steps {
@@ -27,12 +21,6 @@ pipeline {
 		
      }
     }
-//	
-//   stage('copy to web path') {
-//			steps {
-//				sh 'cp -R dist/TestProjectJenkins/* "/.www/"'
-//			}
-//		}
 		
       stage('deploy to S3'){
           steps{
