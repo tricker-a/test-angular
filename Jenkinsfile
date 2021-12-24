@@ -25,12 +25,6 @@ pipeline {
       }
     }
 
-    stage('copy from s3') {
-      agent any
-      steps {
-        s3Download(file: 'index.html', bucket: 'ibolit-test', force: true, path: 'www')
-      }
-    }
-
+   
   }
 }
