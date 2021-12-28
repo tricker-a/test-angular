@@ -17,7 +17,7 @@ pipeline {
       
       steps {
         sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/"'
-        publishChecks(name: 'Stage Reporter', status: in_progress, summary: 'Building...')
+        githubPRStatusPublisher buildMessage: message(failureMsg: githubPRMessage('Can\'t set status; build failed.'), successMsg: githubPRMessage('Can\'t set status; build succeeded.')), statusMsg: githubPRMessage('${GITHUB_PR_COND_REF} run ended'), unstableAs: 'FAILURE'
       }
     }
 
