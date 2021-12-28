@@ -2,11 +2,11 @@ pipeline {
   agent any
   stages {
   
-    stage('check') {
-       steps {
-          publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
-          }
-      }
+ //   stage('check') {
+//       steps {
+//          publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
+//          }
+//      }
  stage('npm install') {
       steps {
         sh 'npm install'
