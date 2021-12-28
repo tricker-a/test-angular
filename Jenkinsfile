@@ -4,7 +4,7 @@ pipeline {
     stage('npm install') {
       steps {
         sh 'npm install'
-//        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
+   publishChecks name: 'test', summary: 'ok', text: '123', title: '123test'
       }
     }
 
