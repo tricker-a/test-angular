@@ -17,7 +17,7 @@ pipeline {
       
       steps {
         sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/"'
-        gitHubPRStatus githubPRMessage('${GITHUB_PR_COND_REF}runstarted')
+        publishChecks(name: 'MyCheck', conclusion: 'Success', summary: 'OK!')
       }
     }
 
