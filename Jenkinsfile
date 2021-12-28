@@ -17,7 +17,7 @@ pipeline {
       
       steps {
         sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/"'
-        publishChecks(name: 'Stage Reporter', status: 'in progress', summary: 'Building...')
+        publishChecks(name: 'Stage Reporter', status: 'in_progress', summary: 'Building...')
       }
     }
 
