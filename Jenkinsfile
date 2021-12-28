@@ -17,7 +17,7 @@ pipeline {
       
       steps {
         sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/"'
-        publishChecks(name: 'MyCheck', conclusion: 'Success', summary: 'OK!')
+        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
       }
     }
 
