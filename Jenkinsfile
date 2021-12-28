@@ -1,18 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
-         steps {
+  
+     stage('check') {
+        steps {
            withChecks(name: 'injected name') {
               echo 'this check should be good'
           }
-         }
-    stage('npm install') {
+          }
+      }
+ stage('npm install') {
       steps {
         sh 'npm install'
           }
       }
-    }
+    
 
     stage('Test') {
       steps {
@@ -20,7 +22,6 @@ pipeline {
 //        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
       }
     }
-
     stage('build') {
       
       steps {
@@ -28,13 +29,11 @@ pipeline {
  //       publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
       }
     }
-
     stage('deploy to S3') {
       steps {
         sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
       }
     }
-
    
   }
 }
