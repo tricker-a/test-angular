@@ -4,14 +4,14 @@ pipeline {
     stage('npm install') {
       steps {
         sh 'npm install'
-        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
+//        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
       }
     }
 
     stage('Test') {
       steps {
         sh 'npm run test:ci'
-        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
+//        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
       }
     }
 
@@ -19,7 +19,7 @@ pipeline {
       
       steps {
         sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/"'
-        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
+ //       publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
       }
     }
 
