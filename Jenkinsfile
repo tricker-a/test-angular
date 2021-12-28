@@ -2,11 +2,9 @@ pipeline {
   agent any
   stages {
   
-     stage('check') {
+     stage('checkout') {
         steps {
-           withChecks(name: 'injected name') {
-              echo 'this check should be good'
-          }
+  checkout([$class: 'GitSCM', branches: [[name: '*/Andrey']], extensions: [], userRemoteConfigs: [[credentialsId: '3', url: 'https://github.com/EugineBelfer/TestAngularJenkins']]])
           }
       }
  stage('npm install') {
