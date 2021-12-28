@@ -1,11 +1,15 @@
 pipeline {
   agent any
   stages {
+    stage('test') {
+         steps {
+           withChecks(name: 'injected name') {
+              echo 'this check should be good'
+          }
+         }
     stage('npm install') {
       steps {
         sh 'npm install'
-                   withChecks(name: 'injected name') {
-              echo 'this check should be good'
           }
       }
     }
