@@ -2,14 +2,15 @@ pipeline {
   agent any
   stages {
   
-     stage('checkout') {
-        steps {
-  checkout([$class: 'GitSCM', branches: [[name: '*/Andrey']], extensions: [], userRemoteConfigs: [[credentialsId: '3', url: 'https://github.com/EugineBelfer/TestAngularJenkins']]])
-          }
-      }
+  //   stage('checkout') {
+  //      steps {
+  //checkout([$class: 'GitSCM', branches: [[name: '*/Andrey']], extensions: [], userRemoteConfigs: [[credentialsId: '3', url: 'https://github.com/EugineBelfer/TestAngularJenkins']]])
+  //        }
+ //     }
  stage('npm install') {
       steps {
         sh 'npm install'
+        publishChecks(name: 'MyCheck', conclusion: Success, summary: 'OK!')
           }
       }
     
