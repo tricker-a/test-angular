@@ -1,14 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('check') {
-      parallel {
-        stage('check') {
-          steps {
-            withChecks(name: 'injected name')
-          }
-        }
-
         stage('telega') {
           agent any
           steps {
@@ -17,7 +9,7 @@ pipeline {
         }
 
       }
-    }
+    
 
     stage('npm install') {
       steps {
