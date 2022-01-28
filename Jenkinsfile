@@ -1,16 +1,7 @@
 pipeline {
   agent any
-  stages {
-        stage('telega') {
-          agent any
-          steps {
-            telegramSend 'test'
-          }
-        }
-
-      }
+  stages 
     
-
     stage('npm install') {
       steps {
         sh 'npm install'
@@ -29,9 +20,13 @@ pipeline {
       }
     }
 
-    stage('deploy to S3') {
+    stage('deploy') {
       steps {
-        sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
+        	sh '''
+          rm -rf  dist
+          rm -rf node_modules
+          docker build -t testangular:v-"${BUILD_ID}" .
+        '''
       }
     }
 
