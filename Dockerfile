@@ -19,5 +19,5 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-COPY ./nginx/myconf.conf /etc/nginx/conf.d/default.conf
+COPY ./myconf.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-stage /usr/src/app/dist/TestProjectJenkins /usr/share/nginx/html
