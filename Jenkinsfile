@@ -1,4 +1,4 @@
-pipeline {
+ipeline {
    agent any 
 	stages {
 		stage('Install') {
@@ -28,10 +28,11 @@ pipeline {
       steps {
         withAWS(credentials: 'aws-s3-cred', region: 'eu-north-1') {
          sh "aws s3 ls"
-		  //   sh "aws s3 mb s3://ibolit-test" 
+		     sh "aws s3 mb s3://ibolit-test" 
 	       sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
+       }
       }
-    }
     
 	}
   }
+ }
