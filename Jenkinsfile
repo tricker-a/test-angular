@@ -13,11 +13,11 @@ pipeline {
 			}
 		}
    
-    stage('Build') {
-			steps {
-				sh 'npm run build-prod && pwd && ls -la "dist/TestProjectJenkins/" && ls -la "/var/www/TestProjectJenkins/"'
-			}
-		}
+    stage('build') {
+      steps {
+        sh 'npm run build && pwd && ls -la "dist/TestProjectJenkins/"'
+      }
+    }
     
     stage('copy to web path') {
 			steps {
