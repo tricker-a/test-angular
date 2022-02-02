@@ -31,9 +31,9 @@ pipeline {
       steps {
  //       withAWS(credentials: 'aws-s3-cred', region: 'eu-north-1') {
          sh "aws s3 ls"
-		     sh "aws s3 mb s3://ibolit-test-bucket1 --region eu-north-1"
-         sh "aws s3 website s3://ibolit-test-bukcet1 --index-document index.html"
-	       sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test-bukcet1  --recursive --acl public-read-write'
+		     sh "aws s3 mb s3://ibolit-test --region eu-north-1"
+         sh "aws s3 website s3://ibolit-test --index-document index.html"
+	       sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
      //  }
       }
     
