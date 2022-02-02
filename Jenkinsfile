@@ -25,11 +25,11 @@ pipeline {
 			}
 		}
 		stage('deploy to S3') {
-      try {
-	  withCredentials([[$calss:'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEYID', credentialsid: 'aws-s3-cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
-        sh "aws s3 ls"
-		sh "aws s3 mb s3://ibolit-test" 
-		sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
+      steps {
+	     withCredentials([[$calss:'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEYID', credentialsid: 'aws-s3-cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
+         sh "aws s3 ls"
+		     sh "aws s3 mb s3://ibolit-test" 
+	       sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
       }
     }
     
