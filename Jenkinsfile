@@ -34,7 +34,7 @@ pipeline {
 		     sh "aws s3 mb s3://ibolit-test"
          sh "aws s3 website s3://ibolit-test --index-document index.html"
 	       sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
-       }
+     //  }
       }
     
 	}
