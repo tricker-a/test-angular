@@ -26,7 +26,6 @@ pipeline {
 		}
 		stage('deploy to S3') {
       steps {
-	 //    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEYID', credentialsId: 'aws-s3-cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
         withAWS(credentials: 'aws-s3-cred', region: 'eu-north-1') {
          sh "aws s3 ls"
 		     sh "aws s3 mb s3://ibolit-test" 
