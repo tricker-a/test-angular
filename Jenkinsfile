@@ -1,5 +1,8 @@
 pipeline {
    agent any 
+  environment {
+    THE_BUTLER_SAYS_SO=credentials('aws-s3-cred')
+  }
 	stages {
 		stage('Install') {
 			steps {
@@ -26,7 +29,7 @@ pipeline {
 		}
 		stage('deploy to S3') {
       steps {
-        withAWS(credentials: 'aws-s3-cred', region: 'eu-north-1') {
+ //       withAWS(credentials: 'aws-s3-cred', region: 'eu-north-1') {
          sh "aws s3 ls"
 		     sh "aws s3 mb s3://ibolit-test"
          sh "aws s3 website s3://ibolit-test --index-document index.html"
