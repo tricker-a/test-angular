@@ -35,6 +35,7 @@ pipeline {
          sh "aws s3 website s3://ibolit-test --index-document index.html"
 	       sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test.${BUILD_ID}  --recursive'
          sh 'aws s3 --recursive mv  s3://ibolit-test.${BUILD_ID}  s3://ibolit-test  --acl public-read-write'
+        sh "aws s3 rb s3://ibolit-test.${BUILD_ID}"
       //  sh 'aws s3 sync dist/TestProjectJenkins/  s3://ibolit-test --delete --acl public-read'
      //  }
       }
