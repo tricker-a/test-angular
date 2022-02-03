@@ -34,7 +34,7 @@ pipeline {
 		 //    sh "aws s3 mb s3://ibolit-test --region eu-north-1"
          sh "aws s3 website s3://ibolit-test --index-document index.html"
 	   //    sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test  --recursive --acl public-read-write'
-        sh 'aws s3 sync dist/TestProjectJenkins/  s3://ibolit-test --delete'
+        sh 'aws s3 sync dist/TestProjectJenkins/  s3://ibolit-test --delete --acl public-read'
      //  }
       }
     
