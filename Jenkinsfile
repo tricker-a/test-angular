@@ -36,7 +36,7 @@ pipeline {
 	       sh 'aws s3 cp dist/TestProjectJenkins/  s3://ibolit-test/new  --recursive --acl public-read-write'
          sh 'aws s3 --recursive mv s3://ibolit-test/actual s3://ibolit-test/old --acl public-read-write'
          sh 'aws s3 --recursive mv s3://ibolit-test/new s3://ibolit-test/actual --acl public-read-write'
-          sh 'aws s3 cp s3://ibolit-test/actual  s3://ibolit-test  --acl public-read-write'
+          sh 'aws --recursive mv  s3://ibolit-test/actual  s3://ibolit-test  --acl public-read-write'
       //  sh 'aws s3 sync dist/TestProjectJenkins/  s3://ibolit-test --delete --acl public-read'
      //  }
       }
