@@ -30,9 +30,9 @@ jobs:
           name: Install Chrome
           command: npm install chrome -g
           
-      - run:
-          name: Run tests
-          command: npm test
+#      - run:
+ #         name: Run tests
+  #        command: npm test
 
 workflows:
   # Below is the definition of your workflow.
