@@ -25,8 +25,8 @@ jobs:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
       - run:
-          name: install chrome
-          command: apt-get install -y google-chrome-stable xvfb && export CHROME_BIN='/usr/bin/chromium' && npm test
+          name: test
+          command: npm test
     #      command: node --version
     #       - run: 
      #     name: Run tests
