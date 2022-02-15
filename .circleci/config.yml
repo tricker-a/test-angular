@@ -26,7 +26,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: install chrome
-          command: npm install chrome && export CHROME_BIN='/usr/bin/chromium' && npm test
+          command: apt-get install -y google-chrome-stable xvfb && export CHROME_BIN='/usr/bin/chromium' && npm test
     #      command: node --version
     #       - run: 
      #     name: Run tests
