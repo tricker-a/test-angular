@@ -27,7 +27,7 @@ jobs:
       - run:
           name: install chrome
           command: npm install chrome
-          command: node --version
+    #      command: node --version
     #       - run: 
      #     name: Run tests
        #   command: npm test
