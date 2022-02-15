@@ -26,7 +26,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: Run tests
-          command: npm test
+          command: npm install chrome -g
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
