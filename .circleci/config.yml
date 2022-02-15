@@ -26,6 +26,10 @@ jobs:
       - node/install-packages:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
+           - run:
+          name: Install Chrome
+          command: npm install chrome -g
+          
       - run:
           name: Run tests
           command: npm test
