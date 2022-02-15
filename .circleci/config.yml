@@ -26,7 +26,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: test
-          command: npm run build && pwd && ls -la /home/circleci/project
+          command: npm run build && pwd && ls -la /home/circleci/project/dist
           
    #   - run:
     #       name: copy to home
