@@ -28,6 +28,7 @@ jobs:
           name: test
           command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
           
+          
    #   - run:
     #       name: copy to home
     #       command: cp -R dist/TestProjectJenkins/* "/var/www/TestProjectJenkins/" 
