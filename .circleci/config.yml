@@ -26,7 +26,7 @@ jobs:
           pkg-manager: npm
       - run:
           name: test
-          command: npm run build && pwd && ls -la /home/circleci/project/dist
+          command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
           
    #   - run:
     #       name: copy to home
