@@ -26,7 +26,6 @@ jobs:
           pkg-manager: npm
       - run:
           name: install chrome & test & build
-          
           command: sudo apt install chrome
           command: npm test
           command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
