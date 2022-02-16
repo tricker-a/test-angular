@@ -33,7 +33,7 @@ jobs:
           
       - run:
            name: test
-           command: npm test 
+           command: npm test --watch false
       - run:
            name: build 
            command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
