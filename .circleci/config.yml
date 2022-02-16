@@ -25,10 +25,10 @@ jobs:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
       - run:
-          name: install chrome & test & build
+          name: install chrome 
           command: sudo apt install chrome
-          command: npm test
-          command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
+       #   command: npm test
+        #  command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
           
           
    #   - run:
