@@ -25,7 +25,10 @@ jobs:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
       - run:
-          name: test
+          name: install chrome & test & build
+          
+          command: sudo apt install chrome
+          command: npm test
           command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
           
           
@@ -35,7 +38,7 @@ jobs:
     #      command: node --version
     #       - run: 
      #     name: Run tests
-       #   command: npm test
+       #   command: npm run build && pwd && ls -la /home/circleci/project/dist/TestProjectJenkins
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
